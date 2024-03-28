@@ -14,6 +14,7 @@ const MetamaskComponent = () => {
         if (accounts.length > 0) {
           accountChangedHandler(accounts[0]);
           setConnButtonText('Wallet Connected');
+         
         }
       }).catch(error => {
         setErrorMessage(error.message);
@@ -36,6 +37,7 @@ const MetamaskComponent = () => {
         .then(result => {
           accountChangedHandler(result[0]);
           setConnButtonText('Wallet Connected');
+          setErrorMessage(null);
         })
         .catch(error => {
           setErrorMessage(error.message);
